@@ -20,7 +20,13 @@ spec:
       containers:
       - image: us-west1-docker.pkg.dev/store-microservices-430116/store-registry/auth-ms-prod
         name: auth-ms-prod
-        resources: {}
+        resources: 
+          requests:
+            memory: "300Mi"
+            cpu: "0.1"
+          limits:
+            memory: "500Mi"
+            cpu: "0.5"
         env:
           - name: PORT
             value: "3003"

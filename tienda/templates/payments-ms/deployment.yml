@@ -22,7 +22,7 @@ spec:
         name: payments-ms-prod
         env:
           - name: PORT
-            value: "3004"
+            value: "3000"
           - name: NATS_SERVERS
             value: "nats://nats-server:4222"
           - name: STRIPE_SUCCESS_URL
@@ -39,5 +39,11 @@ spec:
               secretKeyRef:
                 name: payments-secrets
                 key: endpoint_secret
-        resources: {}
+        resources: 
+          requests:
+            memory: "300Mi"
+            cpu: "0.1"
+          limits:
+            memory: "500Mi"
+            cpu: "0.5"
 status: {}

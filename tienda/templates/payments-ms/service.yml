@@ -8,9 +8,9 @@ metadata:
 spec:
   ports:
   - name: "3004"
-    port: 3004
+    port: 3000
     protocol: TCP
-    targetPort: 3004
+    targetPort: 3000
   selector:
     app: payments-ms
   type: NodePort
